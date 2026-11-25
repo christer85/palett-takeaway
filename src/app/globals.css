@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Fargesystem for Palett Backoffice. Verdier i CSS-variabler slik at lys/mørk modus bytter alt på ett sted. */
+:root {
+  --shell: #0f3b2c;          /* mørkegrønn ramme */
+  --shell-hover: #174a38;
+  --shell-active: #1f5a44;
+  --shell-text: #e7efe9;
+  --shell-muted: #9fb8aa;
+  --shell-border: #23533f;
+
+  --surface: #f4f3ee;        /* lys flate med innhold */
+  --card: #ffffff;
+  --card-muted: #f8f7f3;
+  --border: #e4e2da;
+  --text: #17201b;
+  --muted: #66716a;
+  --accent: #1d6b4f;
+  --accent-hover: #175a42;
+  --accent-text: #ffffff;
+  --ring: #8cc4a8;
+
+  --ok-bg: #e3f4e8;   --ok-fg: #1c6b3a;
+  --warn-bg: #fdf1cf; --warn-fg: #8a5a00;
+  --crit-bg: #fde3e1; --crit-fg: #a8271d;
+  --off-bg: #eceae4;  --off-fg: #5f655f;
+}
+
+.dark {
+  --shell: #08160f;
+  --shell-hover: #10261b;
+  --shell-active: #163325;
+  --shell-text: #dbe7df;
+  --shell-muted: #84a091;
+  --shell-border: #173326;
+
+  --surface: #111a15;
+  --card: #18221d;
+  --card-muted: #1d2822;
+  --border: #2a362f;
+  --text: #e6ece8;
+  --muted: #95a39a;
+  --accent: #3d9a73;
+  --accent-hover: #4aab83;
+  --accent-text: #06140d;
+  --ring: #3d9a73;
+
+  --ok-bg: #173a26;   --ok-fg: #8fd8a9;
+  --warn-bg: #3d3110; --warn-fg: #f3cd6b;
+  --crit-bg: #45201c; --crit-fg: #f5a39b;
+  --off-bg: #263029;  --off-fg: #a3aca6;
+}
+
+@theme inline {
+  --color-shell: var(--shell);
+  --color-shell-hover: var(--shell-hover);
+  --color-shell-active: var(--shell-active);
+  --color-shell-text: var(--shell-text);
+  --color-shell-muted: var(--shell-muted);
+  --color-shell-border: var(--shell-border);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-muted: var(--card-muted);
+  --color-line: var(--border);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-text: var(--accent-text);
+  --color-ring: var(--ring);
+  --color-ok-bg: var(--ok-bg);
+  --color-ok-fg: var(--ok-fg);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-fg: var(--warn-fg);
+  --color-crit-bg: var(--crit-bg);
+  --color-crit-fg: var(--crit-fg);
+  --color-off-bg: var(--off-bg);
+  --color-off-fg: var(--off-fg);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-card: 16px;
+}
+
+html,
+body {
+  background: var(--shell);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "tnum" 0;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
